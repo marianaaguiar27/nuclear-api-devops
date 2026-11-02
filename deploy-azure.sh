@@ -4,7 +4,9 @@
 # Cria uma VM no Azure via Azure CLI, instala o Docker nela e executa a
 # API "Nuclear no Dia a Dia" em container. Ao final, testa a API pela internet.
 #
-# Uso:   ./deploy-azure.sh https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+# Uso:   ./deploy-azure.sh <URL_DO_REPOSITORIO> [TAMANHO_DA_VM] [REGIAO]
+# Ex.:   ./deploy-azure.sh https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git Standard_B2as_v2 mexicocentral
+# Opcional (4o argumento): zona de disponibilidade, ex.: 1
 # Requisitos: Azure CLI instalado e login feito (az login). Repositorio publico.
 # =============================================================================
 set -euo pipefail
@@ -12,12 +14,15 @@ set -euo pipefail
 # ---------- Configuracoes ----------
 REPO_URL="${1:-https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git}"
 RG="rg-nuclear-api"
-LOCATION="mexicocentral"
+LOCATION="${3:-mexicocentral}"
 VM_NAME="vm-nuclear-api"
-VM_SIZE="Standard_B2s"
+VM_SIZE="${2:-Standard_B2as_v2}"
 VM_IMAGE="Ubuntu2204"
 ADMIN_USER="azureuser"
 APP_PORT=8080
+ZONE="${4:-}"
+ZONE_ARGS=()
+if [[ -n "$ZONE" ]]; then ZONE_ARGS=(--zone "$ZONE"); fi
 
 # Trabalha sempre na pasta do script (evita problemas de caminho no Windows)
 cd "$(dirname "${BASH_SOURCE[0]}")"
@@ -45,6 +50,7 @@ az vm create \
   --admin-username "$ADMIN_USER" \
   --generate-ssh-keys \
   --public-ip-sku Standard \
+  "${ZONE_ARGS[@]}" \
   --output table
 
 echo
