@@ -15,7 +15,7 @@ Prova de conceito que demonstra como **Docker** e **Cloud Computing (Microsoft A
 
 ## Links da entrega
 
-- **Vídeo de demonstração (YouTube, não listado):** `COLE_AQUI_O_LINK_DO_VIDEO`
+- **Vídeo de demonstração (YouTube, não listado):** https://youtu.be/cYtDa9B6Xm0
 - **Repositório:** https://github.com/marianaaguiar27/nuclear-api-devops
 
 ## A solução
