@@ -1,0 +1,92 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Arquitetura" id="arq">
+    <mxGraphModel dx="1520" dy="835" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1250" pageHeight="860" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingLeft=12;spacingTop=6;fontStyle=1;fontSize=13;arcSize=3;strokeWidth=2;" value="Microsoft Azure — região Mexico Central" vertex="1">
+          <mxGeometry height="620" width="900" x="280" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingLeft=52;spacingTop=6;fontStyle=1;fontSize=13;arcSize=3;fillColor=#FFFFFF;strokeColor=#0078D4;dashed=1;strokeWidth=2;" value="Resource Group: rg-nuclear-api" vertex="1">
+          <mxGeometry height="550" width="860" x="300" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingLeft=50;spacingTop=6;fontStyle=1;fontSize=13;arcSize=3;fillColor=#F3F9FF;strokeColor=#5B9BD5;dashed=1;strokeWidth=2;" value="Virtual Network: vm-nuclear-apiVNET" vertex="1">
+          <mxGeometry height="485" width="640" x="500" y="215" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingLeft=52;spacingTop=6;fontStyle=1;fontSize=13;arcSize=3;fillColor=#FFFFFF;strokeColor=#0078D4;strokeWidth=2;" value="Azure Virtual Machine: vm-nuclear-api&lt;br&gt;Ubuntu 22.04 LTS · Standard_B2as_v2 (2 vCPU, 8 GiB)" vertex="1">
+          <mxGeometry height="420" width="590" x="525" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingLeft=50;spacingTop=6;fontStyle=1;fontSize=13;arcSize=3;fillColor=#E3F2FD;strokeColor=#2496ED;strokeWidth=2;" value="Docker Engine" vertex="1">
+          <mxGeometry height="300" width="440" x="550" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;fontSize=13;arcSize=3;fillColor=#FFFFFF;strokeColor=#2496ED;strokeWidth=2;fontSize=12;" value="Container: nuclear-api&lt;br&gt;imagem nuclear-api:1.0 (gerada pelo Dockerfile)" vertex="1">
+          <mxGeometry height="210" width="410" x="565" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="c8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#43A047;strokeWidth=2;fontSize=12;fontStyle=1;" value="API REST&lt;br&gt;Spring Boot · Java 17&lt;br&gt;porta 8080" vertex="1">
+          <mxGeometry height="125" width="180" x="580" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="c9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#FB8C00;strokeWidth=2;fontSize=12;fontStyle=1;" value="Banco H2&lt;br&gt;(em memória)&lt;br&gt;dados de teste" vertex="1">
+          <mxGeometry height="125" width="170" x="790" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="c10" parent="1" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;image=img/lib/azure2/general/Resource_Groups.svg;" value="" vertex="1">
+          <mxGeometry height="36" width="36" x="308" y="176" as="geometry" />
+        </mxCell>
+        <mxCell id="c11" parent="1" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;image=img/lib/azure2/networking/Virtual_Networks.svg;" value="" vertex="1">
+          <mxGeometry height="36" width="36" x="508" y="221" as="geometry" />
+        </mxCell>
+        <mxCell id="c12" parent="1" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;image=img/lib/azure2/compute/Virtual_Machine.svg;" value="" vertex="1">
+          <mxGeometry height="40" width="40" x="533" y="266" as="geometry" />
+        </mxCell>
+        <mxCell id="c13" parent="1" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;image=img/lib/mscae/Docker.svg;" value="" vertex="1">
+          <mxGeometry height="36" width="36" x="558" y="336" as="geometry" />
+        </mxCell>
+        <mxCell id="c14" parent="1" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;image=img/lib/azure2/networking/Public_IP_Addresses.svg;" value="Public IP&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="44" width="44" x="318" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="c15" parent="1" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;image=img/lib/azure2/networking/Network_Security_Groups.svg;" value="NSG&lt;br&gt;(portas 22 e 8080)" vertex="1">
+          <mxGeometry height="44" width="44" x="418" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="c16" parent="1" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;image=img/lib/azure2/compute/Disks.svg;" value="Managed Disk&lt;br&gt;(OS Disk)" vertex="1">
+          <mxGeometry height="44" width="44" x="1030" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="c17" parent="1" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;image=img/lib/azure2/identity/Users.svg;" value="Usuário&lt;br&gt;(navegador)" vertex="1">
+          <mxGeometry height="56" width="56" x="40" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="c18" parent="1" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;image=img/lib/clip_art/computers/Laptop_128x128.png;" value="Computador&amp;nbsp;&lt;br&gt;Git Bash + Azure CLI&lt;br&gt;deploy-azure.sh" vertex="1">
+          <mxGeometry height="90" width="90" x="25" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="c19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#24292F;fontColor=#FFFFFF;strokeColor=#24292F;fontSize=13;fontStyle=1;" value="GitHub&lt;br&gt;nuclear-api-devops (repositório público)" vertex="1">
+          <mxGeometry height="70" width="240" x="690" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="c20" edge="1" parent="1" source="c18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#333333;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.4;entryX=0;entryY=0.1;" target="c2" value="Azure CLI:&lt;br&gt;az group create&lt;br&gt;az vm create">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c21" edge="1" parent="1" source="c18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#333333;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=0;entryX=0;entryY=0.5;" target="c19" value="git push">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="70" y="55" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c22" edge="1" parent="1" source="c19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#333333;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="c5" value="git clone + docker build">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c23" edge="1" parent="1" source="c17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#333333;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="c14" value="HTTP :8080">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c24" edge="1" parent="1" source="c14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#333333;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="c15" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c25" edge="1" parent="1" source="c15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#333333;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="c7" value="porta 8080">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c26" edge="1" parent="1" source="c8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#333333;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="c9" value="JPA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c27" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=12;" value="&lt;b&gt;Fluxo:&lt;/b&gt;&amp;nbsp;1. o aluno executa o deploy-azure.sh (Azure CLI) -&amp;gt; 2. o Azure cria resource group, rede, IP público, NSG e a VM&amp;nbsp;&amp;nbsp;-&amp;gt;&amp;nbsp;&amp;nbsp;3. a VM instala o Docker, clona o GitHub e gera a imagem pelo Dockerfile&amp;nbsp;&amp;nbsp;-&amp;gt;&amp;nbsp;&amp;nbsp;4.&amp;nbsp; o container nuclear-api sobe na porta 8080&amp;nbsp;&amp;nbsp;-&amp;gt;&amp;nbsp;&amp;nbsp;5. o usuário acessa http://IP-PUBLICO:8080/swagger-ui.html" vertex="1">
+          <mxGeometry height="60" width="900" x="280" y="755" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
